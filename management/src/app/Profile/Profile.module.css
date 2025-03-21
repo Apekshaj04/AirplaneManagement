@@ -1,0 +1,372 @@
+/* Main Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    min-height: 100vh;
+    background-color: #1a1a2e;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.sidebar ul li {
+    padding: 12px 15px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.sidebar ul li:hover, .sidebar ul li.active {
+    background-color: #16213e;
+}
+
+/* Main Content */
+.content {
+    margin-left: 250px;
+    padding: 30px;
+    flex-grow: 1;
+}
+
+/* Profile Header */
+.profileHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.headerLeft {
+    display: flex;
+    align-items: center;
+}
+
+.avatarContainer {
+    position: relative;
+    margin-right: 15px;
+}
+
+.avatar {
+    border-radius: 50%;
+    border: 3px solid #007bff;
+}
+
+.changeAvatarBtn {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.userName {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.membershipInfo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.memberBadge {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.gold {
+    background: gold;
+    color: black;
+}
+
+.silver {
+    background: silver;
+    color: black;
+}
+
+.bronze {
+    background: #cd7f32;
+    color: white;
+}
+
+.memberSince {
+    font-size: 14px;
+    color: gray;
+}
+
+/* Points Section */
+.pointsContainer {
+    display: flex;
+    align-items: center;
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+
+.pointsIcon {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.pointsLabel {
+    font-size: 14px;
+}
+
+.pointsValue {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Profile Tabs */
+.tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.activeTab {
+    background: #007bff;
+    color: white;
+}
+
+/* Personal Info */
+.personalInfo {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.editButton, .saveButton, .cancelButton {
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.editButton {
+    background: #007bff;
+    color: white;
+}
+
+.saveButton {
+    background: #28a745;
+    color: white;
+}
+
+.cancelButton {
+    background: #dc3545;
+    color: white;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.infoLabel {
+    font-size: 14px;
+    color: gray;
+}
+
+.infoValue {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.editInput {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Preferences */
+.preferences {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.preferencesGrid {
+    display: flex;
+    gap: 20px;
+}
+
+.preferenceCard {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    width: 30%;
+}
+
+.radioOption, .checkOption {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.radioLabel, .checkLabel {
+    font-size: 14px;
+}
+
+.savePrefsButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Security */
+.security {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.passwordForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.updatePasswordBtn, .enableTwoFactorBtn, .logoutAllBtn {
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.sessionCard {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.sessionInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.deviceIcon {
+    font-size: 24px;
+}
+
+.currentDevice {
+    font-size: 14px;
+    color: green;
+}
+
+.logoutBtn {
+    background: #dc3545;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    .infoGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .preferencesGrid {
+        flex-direction: column;
+    }
+
+    .preferenceCard {
+        width: 100%;
+    }
+}
