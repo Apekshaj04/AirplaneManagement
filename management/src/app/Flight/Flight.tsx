@@ -3,8 +3,18 @@ import React, { useState } from "react";
 import styles from "./Flight.module.css";
 import Link from "next/link";
 
+
+// Define the Flight type
+type Flight = {
+  airline: string;
+  from: string;
+  to: string;
+  time: string;
+  price: string;
+};
+
 export default function Flight() {
-  const [flights] = useState([]);
+  const [flights] = useState<Flight[]>([]);
 
   return (
     <div className={styles.container}>
@@ -12,17 +22,21 @@ export default function Flight() {
       <aside className={styles.sidebar}>
         <h2>AMS</h2>
         <ul>
-        <li>
-            <Link href="/Dashboard">🏠 Home</Link></li>
           <li>
-            <Link href="/Flight">✈️ Flights</Link></li>
+            <Link href="/Dashboard">🏠 Home</Link>
+          </li>
           <li>
-            <Link href="/Bookings">🎟️ Bookings</Link></li>
+            <Link href="/Flight">✈️ Flights</Link>
+          </li>
           <li>
-            <Link href="/Profile">👤 Profile</Link></li>
-            <li>
-              <Link href="/">🚪 Logout</Link>
-            </li>
+            <Link href="/Bookings">🎟️ Bookings</Link>
+          </li>
+          <li>
+            <Link href="/Profile">👤 Profile</Link>
+          </li>
+          <li>
+            <Link href="/">🚪 Logout</Link>
+          </li>
         </ul>
       </aside>
 
@@ -39,7 +53,10 @@ export default function Flight() {
         {/* Search Form */}
         <div className={styles.searchContainer}>
           <h3>Search Flights</h3>
-          <form className={styles.searchForm}>
+          <form
+            className={styles.searchForm}
+            onSubmit={(e) => e.preventDefault()} // Prevent page reload
+          >
             <input type="text" placeholder="From (City)" />
             <input type="text" placeholder="To (City)" />
             <input type="date" />
@@ -50,16 +67,21 @@ export default function Flight() {
         {/* Flight Listings */}
         <div className={styles.flightList}>
           <h3>Available Flights</h3>
-          {flights.map((flight, index) => (
-            <div key={index} className={styles.flightCard}>
-              <h4>{flight.airline}</h4>
-              <p>{flight.from} → {flight.to}</p>
-              <p>Time: {flight.time}</p>
-              <p>Price: {flight.price}</p>
-            </div>
-          ))}
+          {flights.length === 0 ? (
+            <p>No flights available</p>
+          ) : (
+            flights.map((flight, index) => (
+              <div key={index} className={styles.flightCard}>
+                <h4>{flight.airline}</h4>
+                <p>
+                  {flight.from} → {flight.to}
+                </p>
+                <p>Time: {flight.time}</p>
+                <p>Price: {flight.price}</p>
+              </div>
+            ))
+          )}
         </div>
-       
       </main>
     </div>
   );
